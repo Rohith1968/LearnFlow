@@ -14,13 +14,7 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 const { v4: uuid } = require("uuid"); //for randomising the file-name.
 
-const bucket = new S3Client({
-  region: "ap-south-1",
-  credentials: {
-    accessKeyId: "AKIAXZ55P4DZPZJS5M6B",
-    secretAccessKey: "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",
-  },
-});
+
 
 // URL -> Associated with a single with a fixed file name and a fixed file type
 //     -> Using this URL we are going to make a PUT request to AWS at the pre-signed URL, body -> file
